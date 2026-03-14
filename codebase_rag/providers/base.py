@@ -114,12 +114,12 @@ class OpenAIProvider(ModelProvider):
     def __init__(
         self,
         api_key: str | None = None,
-        endpoint: str = cs.OPENAI_DEFAULT_ENDPOINT,
+        endpoint: str | None = None,
         **kwargs: str | int | None,
     ) -> None:
         super().__init__(**kwargs)
         self.api_key = api_key or os.environ.get(cs.ENV_OPENAI_API_KEY)
-        self.endpoint = endpoint
+        self.endpoint = endpoint or cs.OPENAI_DEFAULT_ENDPOINT
 
     @property
     def provider_name(self) -> cs.Provider:

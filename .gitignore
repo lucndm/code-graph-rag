@@ -24,3 +24,7 @@ PROJECT.md
 .pypi_cache.json
 .omc
 site/
+
+# Dolt database files (added by bd init)
+.dolt/
+*.db
